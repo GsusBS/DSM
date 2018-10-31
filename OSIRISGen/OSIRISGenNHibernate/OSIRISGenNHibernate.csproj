@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+		<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		  <PropertyGroup>
+		    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+		    <ProductVersion>8.0.30703</ProductVersion>
+		    <SchemaVersion>2.0</SchemaVersion>
+		    <ProjectGuid>{66C66636-FD6A-4A3F-A7C5-FE88BBA117AF}</ProjectGuid>
+		    <OutputType>Library</OutputType>
+		    <AppDesignerFolder>Properties</AppDesignerFolder>
+		    <RootNamespace>OSIRISGenNHibernate</RootNamespace>
+		    <AssemblyName>OSIRISGenNHibernate</AssemblyName>
+		    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+		    <FileAlignment>512</FileAlignment>
+		    <PublishUrl>publish\</PublishUrl>
+		    <Install>true</Install>
+		    <InstallFrom>Disk</InstallFrom>
+		    <UpdateEnabled>false</UpdateEnabled>
+		    <UpdateMode>Foreground</UpdateMode>
+		    <UpdateInterval>7</UpdateInterval>
+		    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+		    <UpdatePeriodically>false</UpdatePeriodically>
+		    <UpdateRequired>false</UpdateRequired>
+		    <MapFileExtensions>true</MapFileExtensions>
+		    <ApplicationRevision>0</ApplicationRevision>
+		    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+		    <IsWebBootstrapper>false</IsWebBootstrapper>
+		    <UseApplicationTrust>false</UseApplicationTrust>
+		    <BootstrapperEnabled>true</BootstrapperEnabled>
+		  </PropertyGroup>
+		  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		    <DebugSymbols>true</DebugSymbols>
+		    <DebugType>full</DebugType>
+		    <Optimize>false</Optimize>
+		    <OutputPath>bin\Debug\</OutputPath>
+		    <DefineConstants>DEBUG;TRACE</DefineConstants>
+		    <ErrorReport>prompt</ErrorReport>
+		    <WarningLevel>4</WarningLevel>
+		  </PropertyGroup>
+		  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		    <DebugType>pdbonly</DebugType>
+		    <Optimize>true</Optimize>
+		    <OutputPath>bin\Release\</OutputPath>
+		    <DefineConstants>TRACE</DefineConstants>
+		    <ErrorReport>prompt</ErrorReport>
+		    <WarningLevel>4</WarningLevel>
+		  </PropertyGroup>
+		<ItemGroup>
+		    <Reference Include="Castle.DynamicProxy2, Version=2.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+		      <SpecificVersion>False</SpecificVersion>
+		      <HintPath>..\OSIRISGenNHibernate\AppLib\Castle.DynamicProxy2.dll</HintPath>
+		    </Reference>
+		    <Reference Include="LinFu.DynamicProxy, Version=1.0.3.14911, Culture=neutral, PublicKeyToken=62a6874124340d6e, processorArchitecture=MSIL">
+		      <SpecificVersion>False</SpecificVersion>
+		      <HintPath>..\OSIRISGenNHibernate\AppLib\LinFu.DynamicProxy.dll</HintPath>
+		    </Reference>
+		    <Reference Include="NHibernate, Version=2.1.2.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+		      <SpecificVersion>False</SpecificVersion>
+		      <HintPath>..\OSIRISGenNHibernate\AppLib\NHibernate.dll</HintPath>
+		    </Reference>
+		    <Reference Include="NHibernate.ByteCode.Castle, Version=2.1.2.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+		      <SpecificVersion>False</SpecificVersion>
+		      <HintPath>..\OSIRISGenNHibernate\AppLib\NHibernate.ByteCode.Castle.dll</HintPath>
+		    </Reference>
+		    <Reference Include="NHibernate.ByteCode.LinFu, Version=2.1.2.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+		      <SpecificVersion>False</SpecificVersion>
+		      <HintPath>..\OSIRISGenNHibernate\AppLib\NHibernate.ByteCode.LinFu.dll</HintPath>
+		    </Reference>
+		    <Reference Include="Newtonsoft.Json, Version=4.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+		      <SpecificVersion>False</SpecificVersion>
+		      <HintPath>..\OSIRISGenNHibernate\AppLib\Newtonsoft.Json.dll</HintPath>
+		    </Reference>
+		     <Reference Include="jose-jwt, Version=4.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+		      <SpecificVersion>False</SpecificVersion>
+		      <HintPath>..\OSIRISGenNHibernate\AppLib\jose-jwt.dll</HintPath>
+		    </Reference>
+		    <Reference Include="System" />
+		    <Reference Include="System.Core">
+		      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+		    </Reference>
+		    
+		    <Reference Include="System.Transactions" />
+		    <Reference Include="System.Xml.Linq">
+		      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+		    </Reference>
+		    <Reference Include="System.Data.DataSetExtensions">
+		      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+		    </Reference>
+		    <Reference Include="System.Data" />
+		    <Reference Include="System.Xml" />
+		</ItemGroup>
+		
+		<ItemGroup>
+		    <Content Include="..\OSIRISGenNHibernate\AppLib\Antlr3.Runtime.dll" />
+		    <Content Include="..\OSIRISGenNHibernate\AppLib\Castle.DynamicProxy2.dll" />
+		    <Content Include="..\OSIRISGenNHibernate\AppLib\Iesi.Collections.dll" />
+		    <Content Include="..\OSIRISGenNHibernate\AppLib\LinFu.DynamicProxy.dll" />
+		    <Content Include="..\OSIRISGenNHibernate\AppLib\log4net.dll" />
+		    <Content Include="..\OSIRISGenNHibernate\AppLib\NHibernate.ByteCode.Castle.dll" />
+		    <Content Include="..\OSIRISGenNHibernate\AppLib\NHibernate.ByteCode.LinFu.dll" />
+		    <Content Include="..\OSIRISGenNHibernate\AppLib\NHibernate.dll" />
+		    <Content Include="..\OSIRISGenNHibernate\AppLib\nunit.core.dll" />
+		    <Content Include="..\OSIRISGenNHibernate\AppLib\nunit.framework.dll" />
+  		    <Content Include="..\OSIRISGenNHibernate\AppLib\jose-jwt.dll" />
+  		</ItemGroup>
+  		
+		<ItemGroup>
+			<Compile Include="NHibernateHelper.cs" />
+		    <Compile Include="Utils\Util.cs" />
+		    <Compile Include="Exceptions\ModelException.cs"/>
+		    <Compile Include="Exceptions\DataLayerException.cs"/>
+		    
+	<Compile Include="CAD\BasicCAD.cs"/>
+	<Compile Include="CP\BasicCP.cs"/>
+	<Compile Include="EN\OSIRIS\ClienteEN.cs" />
+	<Compile Include="CEN\OSIRIS\ClienteCEN.cs" />
+	<Compile Include="CAD\OSIRIS\IClienteCAD.cs" />
+	<Compile Include="CAD\OSIRIS\ClienteCAD.cs" />
+	<Compile Include="CP\OSIRIS\ClienteCP.cs" />
+			
+			
+			
+	<Compile Include="EN\OSIRIS\AdminEN.cs" />
+	<Compile Include="CEN\OSIRIS\AdminCEN.cs" />
+	<Compile Include="CAD\OSIRIS\IAdminCAD.cs" />
+	<Compile Include="CAD\OSIRIS\AdminCAD.cs" />
+	<Compile Include="CP\OSIRIS\AdminCP.cs" />
+			
+			
+			
+	<Compile Include="EN\OSIRIS\CestaEN.cs" />
+	<Compile Include="CEN\OSIRIS\CestaCEN.cs" />
+	<Compile Include="CAD\OSIRIS\ICestaCAD.cs" />
+	<Compile Include="CAD\OSIRIS\CestaCAD.cs" />
+	<Compile Include="CP\OSIRIS\CestaCP.cs" />
+			
+			
+			
+	<Compile Include="EN\OSIRIS\UsuarioEN.cs" />
+	<Compile Include="CEN\OSIRIS\UsuarioCEN.cs" />
+	<Compile Include="CAD\OSIRIS\IUsuarioCAD.cs" />
+	<Compile Include="CAD\OSIRIS\UsuarioCAD.cs" />
+	<Compile Include="CP\OSIRIS\UsuarioCP.cs" />
+			
+			
+			
+	<Compile Include="EN\OSIRIS\CategoriaEN.cs" />
+	<Compile Include="CEN\OSIRIS\CategoriaCEN.cs" />
+	<Compile Include="CAD\OSIRIS\ICategoriaCAD.cs" />
+	<Compile Include="CAD\OSIRIS\CategoriaCAD.cs" />
+	<Compile Include="CP\OSIRIS\CategoriaCP.cs" />
+			
+			
+			
+	<Compile Include="EN\OSIRIS\ProductoEN.cs" />
+	<Compile Include="CEN\OSIRIS\ProductoCEN.cs" />
+	<Compile Include="CAD\OSIRIS\IProductoCAD.cs" />
+	<Compile Include="CAD\OSIRIS\ProductoCAD.cs" />
+	<Compile Include="CP\OSIRIS\ProductoCP.cs" />
+			
+			
+			
+	<Compile Include="EN\OSIRIS\PeliculaEN.cs" />
+	<Compile Include="CEN\OSIRIS\PeliculaCEN.cs" />
+	<Compile Include="CAD\OSIRIS\IPeliculaCAD.cs" />
+	<Compile Include="CAD\OSIRIS\PeliculaCAD.cs" />
+	<Compile Include="CP\OSIRIS\PeliculaCP.cs" />
+			
+			
+			
+	<Compile Include="EN\OSIRIS\SerieEN.cs" />
+	<Compile Include="CEN\OSIRIS\SerieCEN.cs" />
+	<Compile Include="CAD\OSIRIS\ISerieCAD.cs" />
+	<Compile Include="CAD\OSIRIS\SerieCAD.cs" />
+	<Compile Include="CP\OSIRIS\SerieCP.cs" />
+			
+			
+			
+	<Compile Include="EN\OSIRIS\ComentarioEN.cs" />
+	<Compile Include="CEN\OSIRIS\ComentarioCEN.cs" />
+	<Compile Include="CAD\OSIRIS\IComentarioCAD.cs" />
+	<Compile Include="CAD\OSIRIS\ComentarioCAD.cs" />
+	<Compile Include="CP\OSIRIS\ComentarioCP.cs" />
+			
+			
+			
+	<Compile Include="EN\OSIRIS\CriticaEN.cs" />
+	<Compile Include="CEN\OSIRIS\CriticaCEN.cs" />
+	<Compile Include="CAD\OSIRIS\ICriticaCAD.cs" />
+	<Compile Include="CAD\OSIRIS\CriticaCAD.cs" />
+	<Compile Include="CP\OSIRIS\CriticaCP.cs" />
+			
+			
+			
+	<Compile Include="EN\OSIRIS\BibliotecaEN.cs" />
+	<Compile Include="CEN\OSIRIS\BibliotecaCEN.cs" />
+	<Compile Include="CAD\OSIRIS\IBibliotecaCAD.cs" />
+	<Compile Include="CAD\OSIRIS\BibliotecaCAD.cs" />
+	<Compile Include="CP\OSIRIS\BibliotecaCP.cs" />
+			
+			
+			
+	
+	
+
+		    
+	
+
+		    <Compile Include="Properties\AssemblyInfo.cs" />
+		    <Compile Include="Properties\Settings.Designer.cs">
+		      <AutoGen>True</AutoGen>
+		      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+		      <DependentUpon>Settings.settings</DependentUpon>
+		    </Compile>
+		  </ItemGroup>
+		  <ItemGroup>
+		  
+	<EmbeddedResource Include="Mappings\OSIRIS\cliente.hbm.xml" />
+	<EmbeddedResource Include="Mappings\OSIRIS\admin.hbm.xml" />
+	<EmbeddedResource Include="Mappings\OSIRIS\cesta.hbm.xml" />
+	<EmbeddedResource Include="Mappings\OSIRIS\usuario.hbm.xml" />
+	<EmbeddedResource Include="Mappings\OSIRIS\categoria.hbm.xml" />
+	<EmbeddedResource Include="Mappings\OSIRIS\producto.hbm.xml" />
+	<EmbeddedResource Include="Mappings\OSIRIS\pelicula.hbm.xml" />
+	<EmbeddedResource Include="Mappings\OSIRIS\serie.hbm.xml" />
+	<EmbeddedResource Include="Mappings\OSIRIS\comentario.hbm.xml" />
+	<EmbeddedResource Include="Mappings\OSIRIS\critica.hbm.xml" />
+	<EmbeddedResource Include="Mappings\OSIRIS\biblioteca.hbm.xml" />
+	
+	
+
+		  </ItemGroup>
+		  <ItemGroup>
+		    <Content Include="hibernate.cfg.xml">
+		      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		    </Content>
+		  </ItemGroup>
+		  <ItemGroup>
+		    <None Include="app.config" />
+		    <None Include="Properties\Settings.settings">
+		      <Generator>SettingsSingleFileGenerator</Generator>
+		      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+		    </None>
+		        <None Include="Resources\xsd\nhibernate-configuration.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\xsd\nhibernate-mapping.xsd">
+      <SubType>Designer</SubType>
+    </None>
+		  </ItemGroup>
+	 	
+		
+	
+		<ItemGroup>
+		    <ProjectReference Include="..\APIExterna\APIExterna.csproj">
+		      <Project>{4ade35c8-a0c3-49da-9e1a-11a53ca19214}</Project>
+		      <Name>APIExterna</Name>
+		    </ProjectReference>
+	    </ItemGroup>
+	    
+		  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+		  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+		       Other similar extension points exist, see Microsoft.Common.targets.
+		  <Target Name="BeforeBuild">
+		  </Target>
+		  <Target Name="AfterBuild">
+		  </Target>
+		  -->
+		</Project>

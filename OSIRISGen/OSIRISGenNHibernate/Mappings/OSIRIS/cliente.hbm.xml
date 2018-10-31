@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="OSIRISGenNHibernate"
+		                   namespace="OSIRISGenNHibernate.EN.OSIRIS">
+		    
+		    
+			
+				
+<joined-subclass name="ClienteEN" extends="OSIRISGenNHibernate.EN.OSIRIS.UsuarioEN" table="Cliente"> 
+	<key>
+    	
+				<column name="idUsuario"/>
+		
+    	
+   	</key>
+
+			
+					
+					<property name="Attribute" type="string"> 
+						<column name="attribute"  not-null="true"/>
+					</property>
+			
+			
+		  			
+						<bag name="Cesta" table="[cesta_cliente]" inverse="true" >
+							<key>
+								
+									<column name="FK_idUsuario_idCliente"/> 
+							</key>
+      						<many-to-many class="OSIRISGenNHibernate.EN.OSIRIS.CestaEN">
+									<column name="FK_idCesta_idCesta"/> 
+      						</many-to-many>
+    					</bag>
+			
+		  			
+						<bag name="Biblioteca" table="[biblioteca_cliente]" inverse="true" >
+							<key>
+								
+									<column name="FK_idUsuario_idCliente"/> 
+							</key>
+      						<many-to-many class="OSIRISGenNHibernate.EN.OSIRIS.BibliotecaEN">
+									<column name="FK_idBiblioteca_idBiblioteca"/> 
+      						</many-to-many>
+    					</bag>
+			
+					
+					
+					
+		
+ 	  
+		 </joined-subclass>
+		  
+		  <query name="ClienteENReadAllHQL">from ClienteEN</query>
+		</hibernate-mapping>
+	

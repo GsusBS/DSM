@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="OSIRISGenNHibernate"
+		                   namespace="OSIRISGenNHibernate.EN.OSIRIS">
+		    
+		    
+			
+				
+<joined-subclass name="AdminEN" extends="OSIRISGenNHibernate.EN.OSIRIS.UsuarioEN" table="Admin"> 
+	<key>
+    	
+				<column name="idUsuario"/>
+		
+    	
+   	</key>
+
+			
+					
+			
+			
+		  			
+						<bag name="Producto" table="[producto_admin]" inverse="true" >
+							<key>
+								
+									<column name="FK_idUsuario_idAdmin"/> 
+							</key>
+      						<many-to-many class="OSIRISGenNHibernate.EN.OSIRIS.ProductoEN">
+									<column name="FK_idProducto_idProducto"/> 
+      						</many-to-many>
+    					</bag>
+					
+		
+ 	  
+		 </joined-subclass>
+		  
+		  <query name="AdminENReadAllHQL">from AdminEN</query>
+		</hibernate-mapping>
+	

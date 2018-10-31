@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="OSIRISGenNHibernate"
+		                   namespace="OSIRISGenNHibernate.EN.OSIRIS">
+		    
+		    
+			
+				<class name="BibliotecaEN" table="Biblioteca"> 
+				  	
+						<id name="Id" column="idBiblioteca" type="integer"> 
+							<generator class="hilo"/>
+						</id>
+			
+					
+			
+			
+		  			
+						<bag name="Cliente" table="[biblioteca_cliente]"  >
+							<key>
+								
+									<column name="FK_idBiblioteca_idBiblioteca"/> 
+							</key>
+      						<many-to-many class="OSIRISGenNHibernate.EN.OSIRIS.ClienteEN">
+									<column name="FK_idUsuario_idCliente"/> 
+      						</many-to-many>
+    					</bag>
+			
+		  			
+						<bag name="Producto" table="[producto_biblioteca]" inverse="true" cascade="delete">
+							<key>
+								
+									<column name="FK_idBiblioteca_idBiblioteca"/> 
+							</key>
+      						<many-to-many class="OSIRISGenNHibernate.EN.OSIRIS.ProductoEN">
+									<column name="FK_idProducto_idProducto"/> 
+      						</many-to-many>
+    					</bag>
+			
+					
+					
+					
+		
+		 </class>	
+		  
+		  <query name="BibliotecaENReadAllHQL">from BibliotecaEN</query>
+		</hibernate-mapping>
+	

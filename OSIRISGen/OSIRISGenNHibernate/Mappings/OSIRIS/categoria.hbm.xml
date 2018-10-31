@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="OSIRISGenNHibernate"
+		                   namespace="OSIRISGenNHibernate.EN.OSIRIS">
+		    
+		    
+			
+				<class name="CategoriaEN" table="Categoria"> 
+				  	
+						<id name="Id" column="idCategoria" type="integer"> 
+							<generator class="hilo"/>
+						</id>
+			
+					
+			
+			
+		  			
+						<bag name="Producto" table="[categoria_producto]"  >
+							<key>
+								
+									<column name="FK_idCategoria_idCategoria"/> 
+							</key>
+      						<many-to-many class="OSIRISGenNHibernate.EN.OSIRIS.ProductoEN">
+									<column name="FK_idProducto_idProducto"/> 
+      						</many-to-many>
+    					</bag>
+			
+					
+					
+		
+		 </class>	
+		  
+		  <query name="CategoriaENReadAllHQL">from CategoriaEN</query>
+		</hibernate-mapping>
+	

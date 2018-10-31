@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="OSIRISGenNHibernate"
+		                   namespace="OSIRISGenNHibernate.EN.OSIRIS">
+		    
+		    
+			
+				<class name="ProductoEN" table="Producto"> 
+				  	
+						<id name="Id" column="idProducto" type="integer"> 
+							<generator class="hilo"/>
+						</id>
+			
+					
+					<property name="Nombre" type="string"> 
+						<column name="nombre"  not-null="true"/>
+					</property>
+			
+			
+		  			
+						<bag name="Categoria" table="[categoria_producto]" inverse="true" >
+							<key>
+								
+									<column name="FK_idProducto_idProducto"/> 
+							</key>
+      						<many-to-many class="OSIRISGenNHibernate.EN.OSIRIS.CategoriaEN">
+									<column name="FK_idCategoria_idCategoria"/> 
+      						</many-to-many>
+    					</bag>
+			
+		  			
+						<bag name="Cesta" table="[producto_cesta]"  >
+							<key>
+								
+									<column name="FK_idProducto_idProducto"/> 
+							</key>
+      						<many-to-many class="OSIRISGenNHibernate.EN.OSIRIS.CestaEN">
+									<column name="FK_idCesta_idCesta"/> 
+      						</many-to-many>
+    					</bag>
+			
+		  			
+						<bag name="Comentario" table="[producto_comentario]"  >
+							<key>
+								
+									<column name="FK_idProducto_idProducto"/> 
+							</key>
+      						<many-to-many class="OSIRISGenNHibernate.EN.OSIRIS.ComentarioEN">
+									<column name="FK_idComentario_idComentario"/> 
+      						</many-to-many>
+    					</bag>
+			
+		  			
+						<bag name="Critica" table="[critica_producto]" inverse="true" >
+							<key>
+								
+									<column name="FK_idProducto_idProducto"/> 
+							</key>
+      						<many-to-many class="OSIRISGenNHibernate.EN.OSIRIS.CriticaEN">
+									<column name="FK_idCritica_idCritica"/> 
+      						</many-to-many>
+    					</bag>
+			
+		  			
+						<bag name="Biblioteca" table="[producto_biblioteca]"  >
+							<key>
+								
+									<column name="FK_idProducto_idProducto"/> 
+							</key>
+      						<many-to-many class="OSIRISGenNHibernate.EN.OSIRIS.BibliotecaEN">
+									<column name="FK_idBiblioteca_idBiblioteca"/> 
+      						</many-to-many>
+    					</bag>
+			
+		  			
+						<bag name="Admin" table="[producto_admin]"  >
+							<key>
+								
+									<column name="FK_idProducto_idProducto"/> 
+							</key>
+      						<many-to-many class="OSIRISGenNHibernate.EN.OSIRIS.AdminEN">
+									<column name="FK_idUsuario_idAdmin"/> 
+      						</many-to-many>
+    					</bag>
+			
+			
+					
+					
+					
+					
+					
+					
+					
+					
+		
+		 </class>	
+		  
+		  <query name="ProductoENReadAllHQL">from ProductoEN</query>
+		</hibernate-mapping>
+	
